@@ -79,13 +79,14 @@
     <Compile Include="CheckTask\CheckTaskY.vb" />
     <Compile Include="CheckTask\CheckTaskZ.vb" />
     <Compile Include="CheckTask\CheckTaskFactory.vb" />
+    <Compile Include="DataSet\DataSetExcelB.vb" />
     <Compile Include="DataSet\DataSetExcelA.vb" />
+    <Compile Include="DataSet\DataSetWebB.vb" />
     <Compile Include="DataSet\DataSetWebA.vb" />
     <Compile Include="DataSet\DataSetWebBase.vb" />
     <Compile Include="DataSet\DataSetExcelBase.vb" />
     <Compile Include="DataSet\DataSetBase.vb" />
     <Compile Include="DataSet\IDataSet.vb" />
-    <Compile Include="DataSet\IScraping.vb" />
     <Compile Include="frmCheckRunner.vb">
       <SubType>Form</SubType>
     </Compile>

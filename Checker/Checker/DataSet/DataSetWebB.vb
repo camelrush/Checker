@@ -1,4 +1,4 @@
-﻿Public Class DataSetWebA
+﻿Public Class DataSetWebB
     Inherits DataSetWebBase
 
     Private Const M_URL = "https://camelrushsampleweb.s3-ap-northeast-1.amazonaws.com/public/index.html"

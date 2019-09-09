@@ -1,5 +1,5 @@
 ﻿Public Interface IDataSet
 
-    Function GetDataMethod(ByVal p_Key As String) As String
+    Function ReadDataSet(ByVal p_PrimaryKey As String) As Dictionary(Of String, String)
 
 End Interface

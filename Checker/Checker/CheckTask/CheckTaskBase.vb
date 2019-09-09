@@ -7,12 +7,14 @@ Public MustInherit Class CheckTaskBase
     Public Event Finish()
 
     Protected Shared m_DataSetWebA As DataSetWebA
+    Protected Shared m_DataSetWebB As New Dictionary(Of String, DataSetWebB)
     Protected Shared m_DataSetExcelA As DataSetExcelA
+    Protected Shared m_DataSetExcelB As DataSetExcelB
 
     Public Enum ctStatus
-        ready
-        progress
-        finish
+        Ready
+        Progress
+        Finish
     End Enum
 
     Private m_Status As ctStatus
@@ -24,7 +26,7 @@ Public MustInherit Class CheckTaskBase
 
         Dim checkThread As New Thread(New ThreadStart(AddressOf CheckStart))
 
-        m_Status = ctStatus.ready
+        m_Status = ctStatus.Ready
 
         Call checkThread.Start()
 
@@ -41,6 +43,18 @@ Public MustInherit Class CheckTaskBase
         RaiseEvent Finish()
 
         Debug.Print("Task Finished. checkParam=" & m_CheckParam)
+
+    End Sub
+
+    Public Shared Sub SetPrimaryKey(ByVal p_DataSetType As DataSetBase.dsType, ByVal p_Key As String)
+        Select Case p_DataSetType
+            Case DataSetBase.dsType.ExcelA
+            Case DataSetBase.dsType.ExcelB
+            Case DataSetBase.dsType.WebA
+                m_DataSetWebA = New DataSetWebA(p_Key)
+            Case DataSetBase.dsType.WebB
+                m_DataSetWebB.Add(p_Key, New DataSetWebB(p_Key))
+        End Select
 
     End Sub
 
